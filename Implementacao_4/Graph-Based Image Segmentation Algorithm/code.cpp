@@ -14,10 +14,9 @@ int main() {
         generatePgmFromFilename(); // Generate a PGM file from a PNG file
 
         vector<vector<int>> matrix = readPGM("./output/original.pgm"); // Read the PGM file and return a matrix of pixels
-
         vector<vector<int>> smoothedMatrix = applyGaussianFilter(matrix, 3, 0.8f);
 
-        // cout << matrix.size() << endl << smoothedMatrix[0].size() << endl;
+        // cout << "Proporcao da imagem: "<< smoothedMatrix[0].size() << " x " << matrix.size() << endl;
         // cout << matrix << endl;
 
         auto res = createEdgeList(smoothedMatrix);
@@ -28,14 +27,14 @@ int main() {
         // std::cout << matrixGraphToString(res.first, matrix[0].size()) << endl;
 
         int halfPerimeter = (matrix.size() + matrix[0].size());
-        int threshold = halfPerimeter <= 260 ? 150 : halfPerimeter <= 600 ? 300 : 600;
+        int threshold = halfPerimeter <= 260 ? 150 : halfPerimeter <= 560 ? 300 : 600;
         // int threshold = 250
 
         DisjointSet ds = segmentation(matrix.size()*matrix[0].size(), threshold, edges); // Segment the image (number of vertices, threshold, edges)
         
         // ds.printConjuncts(matrix[0].size(), matrix.size());
 
-        std::cout << endl << ds.getQuantity() << endl;
+        std::cout << "Quantidade de conjuntos resultantes: " << ds.getQuantity() << endl;
 
         colorpgm::MatrixToPGM(ds.getQuantity(), ds.toMatrix(matrix.size(), matrix[0].size()), "./output/converted.pgm");
         

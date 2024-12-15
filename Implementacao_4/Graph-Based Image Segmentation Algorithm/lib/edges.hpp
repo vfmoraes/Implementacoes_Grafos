@@ -71,8 +71,6 @@ vector<Edge> createEdgeList(const vector<vector<int>>& pgmMatrix) {
     //     {-1, 0}, {0, -1}, {0, 1}, 
     //     {1, 0}
     // };
-
-    cout << height << " " << width << endl;
     for(int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             int curVertex = i * width + j;
