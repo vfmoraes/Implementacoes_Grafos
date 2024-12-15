@@ -54,7 +54,7 @@ Diferentes valores de k para o algoritmo são recomendados para diferentes taman
 
     soma da altura e largura <= 260: k = 150
     soma da altura e largura <= 600: k = 300
-    caso contrário: k = 500
+    caso contrário: k = 600
 
 No entanto, para resultados mais robustos, diferentes valores de k podem ser usados alterando o valor do limiar específico no arquivo code.cpp.
 

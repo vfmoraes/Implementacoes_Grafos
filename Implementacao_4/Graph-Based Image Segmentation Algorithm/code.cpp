@@ -28,7 +28,7 @@ int main() {
         // std::cout << matrixGraphToString(res.first, matrix[0].size()) << endl;
 
         int halfPerimeter = (matrix.size() + matrix[0].size());
-        int threshold = halfPerimeter <= 260 ? 150 : halfPerimeter <= 600 ? 300 : 500;
+        int threshold = halfPerimeter <= 260 ? 150 : halfPerimeter <= 600 ? 300 : 600;
         // int threshold = 250
 
         DisjointSet ds = segmentation(matrix.size()*matrix[0].size(), threshold, edges); // Segment the image (number of vertices, threshold, edges)

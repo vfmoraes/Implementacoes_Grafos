@@ -52,7 +52,7 @@ Different k values for the algorithm are recommended for different image sizes. 
 
 - sum of height and width <= 260: k = 150 
 - sum of height and width <= 600: k = 300 
-- else: k = 500
+- else: k = 600
 
 However for more robust results, different k values can be used by changing the threshold to a specific value on the `code.cpp` file
 
